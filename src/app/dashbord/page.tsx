@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
- function settings() {
+export  function settings() {
   return (
     <div>settings</div>
   )
