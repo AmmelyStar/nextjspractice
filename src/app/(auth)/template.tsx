@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
+import { useState } from "react";
 
 // export const metadata = {
 //     title: "Next.js",
@@ -22,10 +22,14 @@ export default function RootLayout ({
 }) {
 
     const pathname = usePathname()
+    const [input, setInput] = useState('')
 
     return(
    
             <>
+            <div className="p-4"><input value={input}
+            onChange={(e) => setInput(e.target.value)} 
+            className="outline rounded-sm"/></div>
                 {children}
                 {
                     navlinks.map((link)=>{
