@@ -1,11 +1,9 @@
- import Link from "next/link";
+import HomeComponent from './components/HomeComponent/HomeComponent.js'
 
 export default function Home() {
   return (
-    <div>
-       <div className="h-screen text-4xl">home page</div>
-       <Link href={"/blog"}>BlogPage</Link>
-    </div>
-   
+    <main>
+      <HomeComponent/>
+    </main>
   );
 }

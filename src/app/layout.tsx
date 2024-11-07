@@ -1,21 +1,36 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 import "./globals.css";
 
+const poppins = localFont({
+  src: [
+  {
+  path: "../../public/fonts/Recoleta-Black.ttf",
+  weight: "400",
+  },
+  {
+  path: "../../public/fonts/Recoleta-Medium.ttf",
+  weight: "300",
+  },
+  {
+  path: "../../public/fonts/Recoleta-Light.ttf",
+  weight: "200",
+  },
+  ],
+  variable: "--font-Recoleta-Black",
+  });
 
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -34,11 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={poppins.className}
       >
-        <Header/>
+    
         {children}
-        <Footer/>
+        
       </body>
     </html>
   );
