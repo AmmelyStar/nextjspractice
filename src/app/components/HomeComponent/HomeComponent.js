@@ -1,6 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from "react";
 import { Hind } from "next/font/google";
-import Image from "next/image";
+import 'slick-carousel/slick/slick.css';
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const hind = Hind({
   subsets: ["latin"],
@@ -8,6 +12,92 @@ const hind = Hind({
 });
 
 export default function HomeComponent() {
+
+  var settings = {
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    speed: 2000,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    loop: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1760,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1460,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1290,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+
+};
+
   return (
     <>
       <div
@@ -45,9 +135,30 @@ export default function HomeComponent() {
               <div className="container m-auto">
                 <img src="/ehizeex.png"
                 decoding="async"
-                alt="profile pics"></img>
+                alt="profile pics"/>
               </div>
 
+            </div>
+          </div>
+          <div className="container m-auto absolute">
+            <div className="px-3">
+              <div className="relative max-w-sm bottom-[70px] md:max-w-5xl xl:max-w-6xl px-5 lg:px-14 overflow-auto mx-auto bg-white rounded-2xl z-20"
+              style={{
+                boxShadow: '#48afde -10px 25px 50px 10px'
+              }}>
+                <div className="lg:py-10 md:py-6 sm:py-6 cursor-all-scroll">
+                  <Slider {...settings}>
+                  <img src="/mongodb.png" alt='mongodb' className="h-12"/>
+                  <img src="/reactjs.png" alt='reactjs' className="h-12"/>
+                  <img src="/nextjs.png" alt='nextjs' className="h-12"/>
+                  <img src="/docker.png" alt='docker' className="h-12"/>
+                  <img src="/expressjs.png" alt='expressjs' className="h-12"/>
+                  <img src="/nodejs.png" alt='nodejs' className="h-12"/>
+                  <img src="/expressjs.png" alt='expressjs' className="h-12"/>
+                  </Slider>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
