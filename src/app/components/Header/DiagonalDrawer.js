@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 
